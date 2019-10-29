@@ -35,6 +35,11 @@
     <v-row>
       <v-col cols="12" md="12">
         <h2 class="title">Sobre mi</h2>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius facere adipisci fuga nesciunt necessitatibus tenetur sit impedit. Odit molestiae, voluptate, hic aliquid rem nobis eaque nulla culpa exercitationem inventore doloribus!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit vel, laboriosam doloremque eum libero ex mollitia, quaerat voluptas perferendis aut, vero placeat. Cumque commodi ipsum vero corrupti veniam recusandae ipsam?
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis et error ad beatae architecto pariatur sapiente voluptate necessitatibus! Vero optio beatae quod nemo libero, accusantium atque autem quidem deserunt omnis!
+        </p>
       </v-col>
     </v-row>
     <v-row>

@@ -1,15 +1,59 @@
 <template>
   <v-app>
-    <v-app-bar app>
+    <v-navigation-drawer
+      v-model="drawer"
+      absolute
+      temporary
+    >
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title>MosaDev</v-list-item-title>
+        </v-list-item-content>
+        <v-list-item-icon>
+          <v-btn icon @click.stop="drawer = !drawer">
+            <v-icon>mdi-arrow-left</v-icon>
+          </v-btn>
+        </v-list-item-icon>
+      </v-list-item>
+
+      <v-divider></v-divider>
+
+      <v-list dense>
+
+        <v-list-item
+          v-for="item in items"
+          :key="item.title"
+          link
+        >
+<!--           <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon> -->
+
+          <v-list-item-content>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+    <v-app-bar app :collapse-on-scroll='false'>
+      <v-app-bar-nav-icon class="d-md-none" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title class="headline">
         <span>MosaDev</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
+      
+      <v-btn icon>
+        <v-icon>mdi-magnify</v-icon>
+      </v-btn>
+      <v-toolbar-items class="d-none d-md-flex">
+        <v-btn text>sobre mi</v-btn>
+        <v-btn text>proyectos</v-btn>
+        <v-btn text>contacto</v-btn>
+      </v-toolbar-items>
     </v-app-bar>
 
     <v-content>
       <HelloWorld />
-      <About />
     </v-content>
 
     <v-footer
@@ -58,6 +102,12 @@ export default {
     HelloWorld
   },
   data: () => ({
+    drawer: null,
+    items: [
+      { title: 'Sobre mi', icon: 'dashboard' },
+      { title: 'Proyectos', icon: 'question_answer' },
+      { title: 'Contacto', icon: 'question_answer' },
+    ],
     social_networks: [
       {
         icon: 'mdi-github-box',
@@ -72,6 +122,9 @@ export default {
         link: 'https://twitter.com/omsamoib'
       },
     ],
-  })
+  }),
+  methods:{
+
+  }
 };
 </script>

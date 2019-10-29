@@ -9,6 +9,7 @@
 
     <v-content>
       <HelloWorld />
+      <About />
     </v-content>
 
     <v-footer

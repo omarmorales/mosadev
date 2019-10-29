@@ -32,8 +32,22 @@
         ></vue-typer>
       </v-flex>
     </v-layout>
+    <v-row>
+      <v-col cols="12" md="12">
+        <h2 class="title">Sobre mi</h2>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col cols="12" md="12">
+        <h2 class="title">Proyectos</h2>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col cols="12" md="12">
+        <h2 class="title">Contacto</h2>
+      </v-col>
+    </v-row>
   </v-container>
-  
 </template>
 
 <script>

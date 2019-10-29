@@ -1,0 +1,26 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:300,400,600,700&display=swap');
+// Variables
+@import 'variables';
+
+.v-application {
+    font-family: $font-family !important;
+    .display-4 {
+        font-family:$font-family !important;
+    }
+    .display-3 {
+        font-family:$font-family !important;
+    }
+    .display-2 {
+        font-family:$font-family !important;
+    }
+    .display-1 {
+        font-family:$font-family !important;
+    }
+    .headline {
+        font-family:$font-family !important;
+    }
+    .title {
+        font-family:$font-family !important;
+    }
+}

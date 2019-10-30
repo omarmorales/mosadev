@@ -49,6 +49,11 @@
     </v-row>
     <v-row>
       <v-col cols="12" md="12">
+        <h2 class="title">Publicaciones</h2>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col cols="12" md="12">
         <h2 class="title">Contacto</h2>
       </v-col>
     </v-row>

@@ -4,28 +4,18 @@
       :sections="sections"
       :drawer="drawer"
       @toogle="drawer = !drawer"
+      :appname="appname"
     />
-    <v-app-bar app :collapse-on-scroll="false">
-      <v-app-bar-nav-icon
-        class="d-md-none"
-        @click.stop="drawer = !drawer"
-      ></v-app-bar-nav-icon>
-      <v-toolbar-title class="headline">
-        <span>MosaDev</span>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-      <v-toolbar-items class="d-none d-md-flex">
-        <v-btn v-for="(section, index) in sections" :key="index" text>
-          {{ section.title }}
-        </v-btn>
-      </v-toolbar-items>
-    </v-app-bar>
-
+    <Navbar
+      :sections="sections"
+      :drawer="drawer"
+      @toogle="drawer = !drawer"
+      :appname="appname"
+    />
     <v-content>
-      <HelloWorld />
+      <transition name="fade" mode="out-in" @after-leave="afterLeave">
+        <router-view class="view"></router-view>
+      </transition>
     </v-content>
 
     <v-footer dark padless>
@@ -59,21 +49,22 @@
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
 import SideNav from "./components/navigation/Sidenav";
+import Navbar from "./components/navigation/Navbar";
 
 export default {
   name: "App",
   components: {
-    HelloWorld, SideNav
+    SideNav, Navbar
   },
   data: () => ({
     drawer: false,
+    appname: "MosaDev",
     sections: [
-      { title: "Sobre mi", icon: "dashboard" },
-      { title: "Proyectos", icon: "question_answer" },
-      { title: "Publicaciones", icon: "question_answer" },
-      { title: "Contacto", icon: "question_answer" }
+      { title: "Inicio", route: "/", icon: "dashboard" },
+      { title: "Proyectos", route: "/projects", icon: "question_answer" },
+      { title: "Publicaciones", route: "/publications", icon: "question_answer" },
+      { title: "Contacto", route: "/contact", icon: "question_answer" }
     ],
     social_networks: [
       {
@@ -89,6 +80,11 @@ export default {
         link: "https://twitter.com/omsamoib"
       }
     ]
-  })
+  }),
+  methods: {
+    afterLeave () {
+      this.$root.$emit('triggerScroll')
+    }
+  }
 };
 </script>

@@ -17,7 +17,7 @@
           Omar Saúl Morales Ibarra
         </h1>
         <vue-typer
-          class="font-weight-medium"
+          class="headline"
           :text='positions'
           :repeat='Infinity'
           :shuffle='false'

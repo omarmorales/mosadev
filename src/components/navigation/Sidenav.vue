@@ -2,7 +2,7 @@
     <v-navigation-drawer v-model="drawer" absolute temporary>
         <v-list-item>
             <v-list-item-content>
-                <v-list-item-title>MosaDev</v-list-item-title>
+                <v-list-item-title>{{ appname }}</v-list-item-title>
             </v-list-item-content>
             <v-list-item-icon>
                 <v-btn icon @click.stop="toogleDrawer">
@@ -27,7 +27,8 @@
     export default {
         props: {
             sections: Array,
-            drawer: Boolean
+            drawer: Boolean,
+            appname: String
         },
         methods: {
             toogleDrawer(){

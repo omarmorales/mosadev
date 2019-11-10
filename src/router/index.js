@@ -24,6 +24,12 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/Publications.vue")
   },
   {
+    path: "/contact",
+    name: "contact",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Contact.vue")
+  },
+  {
     path: "/about",
     name: "about",
     // route level code-splitting

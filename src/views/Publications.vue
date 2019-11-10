@@ -57,14 +57,14 @@
         data: () => ({
             breadcrum_items: [
                 {
-                text: 'Inicio',
-                disabled: false,
-                href: '/',
+                    text: 'Inicio',
+                    disabled: false,
+                    href: '/',
                 },
                 {
-                text: 'Publicaciones',
-                disabled: true,
-                href: 'publications',
+                    text: 'Publicaciones',
+                    disabled: true,
+                    href: 'publications',
                 },
             ],
             publications: [

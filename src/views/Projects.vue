@@ -1,10 +1,8 @@
 <template>
     <v-container>
         <v-row>
-            <v-col cols="12" md="12">
-                <h1 class="display-1 font-weight-bold mb-2">
-                    Proyectos
-                </h1>
+            <v-col cols="12">
+                 <v-breadcrumbs :items="breadcrum_items" divider=">"></v-breadcrumbs>
             </v-col>
         </v-row>
     </v-container>
@@ -14,7 +12,18 @@
     export default {
         name: "projects",
         data: () => ({
-
+            breadcrum_items: [
+                {
+                    text: 'Inicio',
+                    disabled: false,
+                    href: '/',
+                },
+                {
+                    text: 'Proyectos',
+                    disabled: true,
+                    href: 'projects',
+                },
+            ],
         })
     }
 </script>
